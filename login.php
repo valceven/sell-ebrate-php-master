@@ -1,3 +1,30 @@
+<?php
+
+  $username = $password = '';
+  $errors = array('username'=>'','password'=>'');
+
+  if(isset($_POST['btnLogin'])){
+
+    if(empty($_POST['username'])){
+      $errors['username'] = 'Please Enter a username';
+    }
+
+    if(empty($_POST['password'])){
+      $errors['password'] = 'Please Enter a password';
+    }
+
+    if(array_filter($errors)){
+      echo '<script>';
+      echo 'alert("Danghaga nimo oy.")';
+      echo '</script>';
+    }
+    
+  }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,10 +57,12 @@
         <div class="col-md-6">
           <label for="username" class="form-label"><b>Username</b></label>
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="username" />
+          <p style="color: red"><?php echo $errors['username'] ?></p>
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label"><b>Password</b></label>
           <input type="password" placeholder="*******" class="form-control" name="password" />
+          <p style="color: red"><?php echo $errors['username'] ?></p>
         </div>
 
         <div class="col-12">

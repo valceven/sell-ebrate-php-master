@@ -1,3 +1,68 @@
+<?php 
+
+  $username = $firstname = $lastname = $email = $password = "";
+  $errors = array('username'=>'','firstname'=>'','lastname'=>'',
+  'email'=>'','password'=>'' , 'chickbox'=>'');
+
+  if(isset($_POST['btnRegister'])){
+
+      if(empty($_POST['username'])){
+        $errors['$username'] = 'Please enter a username.';
+      }else{
+        $username = $_POST['username'];
+        if(!preg_match('/^[a-zA-Z\s]+$/', $username)){
+          $errors['username'] = 'Please enter letters.';
+      }
+    }
+
+    if(empty($_POST['firstname'])){
+      $errors['firstname'] = 'Please Enter Your firstname.';
+    }else{
+      $firstname = $_POST['firstname'];
+      if(!preg_match('/^[a-zA-Z\s]+$/', $firstname)){
+        $errors['firstname'] = 'Please enter letters.';
+    }
+  }
+
+    if(empty($_POST['lastname'])){
+      $errors['lasstname'] = 'Please Enter Your lastname.';
+    }else{
+      $lastname = $_POST['lastname'];
+      if(!preg_match('/^[a-zA-Z\s]+$/', $lastname)){
+        $errors['lastname'] = 'Please enter letters.';
+    }
+  }
+
+    if(empty($_POST['email'])){
+      $errors['email'] = 'Please enter an email.';
+    }else{
+      $email = $_POST['email'];
+      if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $errors['email'] = 'Email must be a valid email address.';
+      }
+    }
+
+    if(empty($_POST['password'])){
+      $errors['password'] = 'Please Enter a password.';
+    }
+
+    if(empty($_POST['chickbox'])){
+      $errors['chickbox'] = 'Please chick the boks.';
+    }
+
+    if(array_filter($errors)){
+      echo '<script>';
+      echo 'alert("Danghaga nimo oy.")';
+      echo '</script>';
+    }else{
+      header('Location: ./api/register.php');
+      exit();
+    }
+
+  }
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -22,32 +87,36 @@
     ?>
 
 </head>
-
 <body>
 
   <section class="register-sec">
     <div class="register-container">
-      <form method="POST" action="./api/register.php" class="row g-3">
+      <form method="POST" action="register.php" class="row g-3">
         <h3 class="registerH3">Registration Form</h3>
         <div class="col-md-6">
           <label for="username" class="form-label">User Name</label>
           <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="username" />
+          <p style="color:red"><?php echo $errors['username']?></p>
         </div>
         <div class="col-md-6">
           <label for="firstname" class="form-label">First Name</label>
           <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstname" />
+          <p style="color:red"><?php echo $errors['firstname']?></p>
         </div>
         <div class="col-md-6">
           <label for="lastname" class="form-label">Last Name</label>
           <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="lastname" />
+          <p style="color:red"><?php echo $errors['lastname']?></p>
         </div>
         <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Email</label>
           <input type="email" placeholder="adrianbolante@gmail.com" class="form-control" name="email" />
+          <p style="color:red"><?php echo $errors['email']?></p>
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Password</label>
           <input type="password" placeholder="*******" class="form-control" name="password" />
+          <p style="color:red"><?php echo $errors['password']?></p>
         </div>
         <div class="col-12">
           <label for="inputAddress" class="form-label">Gender</label>
@@ -64,9 +133,10 @@
 
         <div class="col-11">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <input class="form-check-input" name= "chickbox" type="checkbox" id="gridCheck" />
             <label class="form-check-label" for="gridCheck">
               <strong>I have read the terms and conditions</strong>
+              <!-- <p style="color:red"><?php echo $errors['chickbox']?></p> -->
             </label>
           </div>
         </div>
