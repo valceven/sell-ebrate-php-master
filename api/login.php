@@ -21,10 +21,8 @@ include 'connectDb.php';
 				  </script>";
 		}else{
 			$_SESSION['username']=$row[0];
-			header("location: ../main.php");
+			header("location: ../dashboard.php");
 		}
-			
-		
 	}
 		
 ?>

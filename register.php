@@ -7,7 +7,7 @@
   if(isset($_POST['btnRegister'])){
 
       if(empty($_POST['username'])){
-        $errors['$username'] = 'Please enter a username.';
+        $errors['username'] = 'Please enter a username.';
       }else{
         $username = $_POST['username'];
         if(!preg_match('/^[a-zA-Z\s]+$/', $username)){
@@ -25,7 +25,7 @@
   }
 
     if(empty($_POST['lastname'])){
-      $errors['lasstname'] = 'Please Enter Your lastname.';
+      $errors['lastname'] = 'Please Enter Your lastname.';
     }else{
       $lastname = $_POST['lastname'];
       if(!preg_match('/^[a-zA-Z\s]+$/', $lastname)){
@@ -51,12 +51,11 @@
     }
 
     if(array_filter($errors)){
-      echo '<script>';
+
       echo 'alert("Danghaga nimo oy.")';
-      echo '</script>';
+    
     }else{
-      header('Location: ./api/register.php');
-      exit();
+      require './api/register.php';
     }
 
   }
