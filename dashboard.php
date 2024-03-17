@@ -1,7 +1,6 @@
 <?php    
     include 'api/connectDb.php';
-    include 'api/readrecords.php';   
-    require_once 'navbar.php'; 
+    include 'api/readrecords.php';    
 ?>
 
 <meta charset="utf-8" />
@@ -16,6 +15,24 @@
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="jquery-3.7.1.min.js"></script>
+
+  <nav class="navbar-stylish">
+    <img src="/assets/images/logo.svg" class="logo">
+    <h1>
+      Sell Ebrate
+    </h1>
+      <ul>
+      <li><h1><a href="index.php">Index</a></h1></li>
+      <li><h1><a href="aboutUs.php">About Us</a></h1></li>
+      <li><h1><a href="contactUs.php">Contact Us</a></h1></li>
+      <li><h1><a href="register.php">Register</a></h1></li>
+      <li><h1><a style="color: red;" href="login.php">Logout</a></h1></li>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+      </ul>
+    
+  </nav>
     
 <div style='background-color:#ffff00'>
     <center>

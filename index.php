@@ -23,7 +23,7 @@
   
   <div>
     <div class="index-image">
-      <img src="/sell-ebrate-php-master/assets/images/sell-ebrate-bg.jpg" alt="an iamge was here hehe hohoh ahaha">
+      <img src="/F1Bolante/assets/images/sell-ebrate-bg.jpg" alt="an iamge was here hehe hohoh ahaha">
     </div>
   </div>
   
