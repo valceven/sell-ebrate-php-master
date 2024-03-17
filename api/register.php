@@ -6,14 +6,16 @@ include 'connectDb.php';
 		//for tbluserprofile
 		$firstname=$_POST['firstname'];		
 		$lastname=$_POST['lastname'];
-		
+		$gender=$_POST['gender'];		
+		$birthdate=$_POST['birthdate'];
 		//for tbluseraccount
 		$email=$_POST['email'];		
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		
+		
 		//save data to tbluserprofile			
-		$sql1 ="Insert into tbluserprofile(firstname,lastname) values('".$firstname."','".$lastname."')";
+		$sql1 ="Insert into tbluserprofile(firstname,lastname,gender,birthdate) values('".$firstname."','".$lastname."','".$gender."','".$birthdate."')";
 		mysqli_query($connection,$sql1);
 		
 		//Check tbluseraccount if username is already existing. Save info if false. Prompt msg if true.
