@@ -11,7 +11,7 @@
 
         $sql1 = "INSERT INTO tblproduct(seller_id,product_name,description,quantity,price) VALUES (1,'$product_name','$description', '$quantity' , '$price')";
         mysqli_query($connection,$sql1);  
-        echo "<script language='javascript'>
+        echo "<script language='javascript'>s
         alert('Product added successfully');
         </script>";
 

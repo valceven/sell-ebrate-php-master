@@ -1,5 +1,7 @@
 <?php 
 
+  include_once("../api/connectDb.php");
+
   $username = $firstname = $lastname = $email = $password = "";
   $errors = array('username'=>'','firstname'=>'','lastname'=>'',
   'email'=>'','password'=>'' , 'chickbox'=>'');
@@ -55,7 +57,37 @@
       echo 'alert("Danghaga nimo oy.")';
     
     }else{
-      require './api/register.php';
+    $firstname=$_POST['firstname'];		
+		$lastname=$_POST['lastname'];
+		$gender=$_POST['gender'];		
+		$birthdate=$_POST['birthdate'];
+		//for tbluseraccount
+		$email=$_POST['email'];		
+		$username=$_POST['username'];
+		$password=$_POST['password'];
+		
+		
+		//save data to tbluserprofile			
+		$sql1 ="Insert into tbluserprofile(firstname,lastname,gender,birthdate) values('".$firstname."','".$lastname."','".$gender."','".$birthdate."')";
+		mysqli_query($connection,$sql1);
+		
+		
+		//Check tbluseraccount if username is already existing. Save info if false. Prompt msg if true.
+		$sql2 ="SELECT * from tbluseraccount where username='".$username."'";
+		$result = mysqli_query($connection,$sql2);
+		$row = mysqli_num_rows($result);
+		
+		if($row == 0){
+			$sql ="INSERT into tbluseraccount(emailAd,username,password) values('".$email."','".$username."','".$password."')";
+			mysqli_query($connection,$sql);
+			echo "<script language='javascript'>
+						alert('New record saved.');
+				  </script>";
+		}else{
+			echo "<script language='javascript'>
+						alert('Username already existing');
+				  </script>";
+		}
     }
 
   }
@@ -90,7 +122,7 @@
 
   <section class="register-sec">
     <div class="register-container">
-      <form method="POST" action="../api/register.php" class="row g-3">
+      <form method="POST" action="register.php" class="row g-3">
         <h3 class="registerH3">Registration Form</h3>
         <div class="col-md-6">
           <label for="username" class="form-label">User Name</label>
