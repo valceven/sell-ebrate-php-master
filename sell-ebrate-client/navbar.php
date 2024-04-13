@@ -6,7 +6,7 @@
 <body>
 
   <nav class="navbar-stylish">
-    <img src="/assets/images/logo.svg" class="logo">
+    <img src="../assets/images/logo.svg" class="logo">
     <h1>
       Sell Ebrate
     </h1>

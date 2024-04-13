@@ -12,7 +12,7 @@ include 'connectDb.php';
 		$email=$_POST['email'];		
 		$username=$_POST['username'];
 		$password=$_POST['password'];
-		
+		$userid=$_POST['userId'];
 		
 		//save data to tbluserprofile			
 		$sql1 ="Insert into tbluserprofile(firstname,lastname,gender,birthdate) values('".$firstname."','".$lastname."','".$gender."','".$birthdate."')";
@@ -23,7 +23,7 @@ include 'connectDb.php';
 		$result = mysqli_query($connection,$sql2);
 		$row = mysqli_num_rows($result);
 		if($row == 0){
-			$sql ="Insert into tbluseraccount(emailadd,username,password) values('".$email."','".$username."','".$password."')";
+			$sql ="Insert into tbluseraccount(acctId,emailadd,username,password) values('".$userid."','".$email."','".$username."','".$password."')";
 			mysqli_query($connection,$sql);
 			echo "<script language='javascript'>
 						alert('New record saved.');

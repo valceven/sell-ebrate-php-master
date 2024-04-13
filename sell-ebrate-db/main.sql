@@ -17,3 +17,6 @@ CREATE TABLE tblUserAccount (
   CONSTRAINT CHK_TYPE CHECK (usertype IN ('customer', 'seller'))
 );
 
+ALTER TABLE tbluseraccount
+ADD CONSTRAINT FK_User_Account
+FOREIGN KEY (acctId) REFERENCES tblAccount(userId);

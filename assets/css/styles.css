@@ -147,3 +147,105 @@ nav ul li a{
     justify-content: center;
     background-color: rgba(51, 132, 185, 0.65);
 }
+
+.details-sec{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 550px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+}
+
+.product-information th {
+    background-color: blanchedalmond;
+    border: 3px black solid;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 1.5em;
+}
+
+.product-information td {
+    margin: 5px;
+    border: 2px black solid;
+    padding: 15px;
+    background-color: rgb(236, 235, 215);
+}
+
+.product-information tr {
+    margin-top: 5px;
+}
+
+.batones{
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+.batones button{
+    text-transform: uppercase;
+    background-color: azure;
+}
+
+.batones button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.batones button::after{
+    opacity: 0.6;
+    cursor: grabbing;
+    background-color: black;
+    color: azure;
+}
+
+
+.prod-details-sec{
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    height: 550px;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px 30px;
+}
+
+
+.prod-details-picture{
+    width: 250px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    border-radius: 80%; /* Ensures rounded image */
+}
+
+
+.prod-details-container h3 {
+    font-size: 1.5em;
+}
+
+.prod-details-cotainer p {
+    font-size: 1em;
+    color: #666;
+}

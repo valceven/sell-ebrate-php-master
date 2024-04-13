@@ -5,8 +5,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap demo</title>
-  <link href="styles.css" type="text/css" rel="stylesheet" />
+  <title>Sell-Ebrate</title>
+  <link href="../assets/css/styles.css" type="text/css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
   
   <div>
     <div class="index-image">
-      <img src="/F1Bolante/assets/images/sell-ebrate-bg.jpg" alt="an iamge was here hehe hohoh ahaha">
+      <img src="../assets/images/sell-ebrate-bg.jpg" alt="an iamge was here hehe hohoh ahaha">
     </div>
   </div>
   
